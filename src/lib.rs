@@ -7,6 +7,7 @@ mod merchant_network;
 mod cash_transfer;
 mod supply_chain_tracker;
 mod anti_fraud;
+mod custody_validator;
 
 pub use aid_registry::*;
 pub use beneficiary_manager::*;
@@ -14,6 +15,7 @@ pub use merchant_network::*;
 pub use cash_transfer::*;
 pub use supply_chain_tracker::*;
 pub use anti_fraud::*;
+pub use custody_validator::*;
 
 #[contract]
 pub struct DisasterReliefPlatform;

@@ -4,6 +4,8 @@ export { BeneficiaryClient } from './beneficiaryClient';
 export { MerchantClient } from './merchantClient';
 export { TransferClient } from './transferClient';
 export { TrackerClient } from './trackerClient';
+export { CustodyClient, CustodyNetworkSDK } from './custody';
+export { CustodyMonitoring, createCustodyMonitoring, InsuranceIntegration } from './custodyMonitoring';
 
 // Export Merchant Network SDK
 export { MerchantNetworkSDK } from './merchantNetwork';
@@ -24,7 +26,8 @@ export const TESTNET_CONFIG = {
     merchantNetwork: 'CONTRACT_ID_HERE',
     cashTransfer: 'CONTRACT_ID_HERE',
     supplyChainTracker: 'CONTRACT_ID_HERE',
-    antiFraud: 'CONTRACT_ID_HERE'
+    antiFraud: 'CONTRACT_ID_HERE',
+    custodyValidator: 'CONTRACT_ID_HERE'
   }
 };
 
@@ -39,7 +42,8 @@ export const MAINNET_CONFIG = {
     merchantNetwork: 'CONTRACT_ID_HERE',
     cashTransfer: 'CONTRACT_ID_HERE',
     supplyChainTracker: 'CONTRACT_ID_HERE',
-    antiFraud: 'CONTRACT_ID_HERE'
+    antiFraud: 'CONTRACT_ID_HERE',
+    custodyValidator: 'CONTRACT_ID_HERE'
   }
 };
 
@@ -49,7 +53,8 @@ export const createDisasterReliefSDK = (config: any) => ({
   beneficiaryClient: new BeneficiaryClient(config),
   merchantClient: new MerchantClient(config),
   transferClient: new TransferClient(config),
-  trackerClient: new TrackerClient(config)
+  trackerClient: new TrackerClient(config),
+  custodyClient: new CustodyClient(config)
 });
 
 // Export constants
